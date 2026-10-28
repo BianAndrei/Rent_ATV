@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glogovet Trails · ATV Rentals</title>
+  <meta name="description" content="Rent an ATV by the hour or by the day. Safety briefing included, Strava-mapped routes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+  </svg>
+  <header class="topbar">
+    <a class="brand" href="#top" data-text="Glogovet Trails"><span>GTrails</span></a>
+    <a class="book-link" href="#contact">CONTACT</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow">ATV Rentals · Off-road trails</p>
+      <h1>RIDE THE<br><span class="accent">ROUGH.</span></h1>
+    </section>
+
+    <section class="intro">
+      <h2>PICK A MACHINE.<br>PICK A TRAIL.<br>GO.</h2>
+      <p>Guided ATV tours in Blaj / Glogovet. 5 seats per tour, beginners welcome. Get a quick safety briefing and hit routes we have already ridden ourselves.</p>
+      <a class="btn btn-dark" href="#routes">See the routes</a>
+      <button class="btn btn-outline" type="button" id="book-btn">Book your ride</button>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <h2>OUT ON THE TRAIL</h2>
+      <div class="marquee" data-direction="left"><div class="track"></div></div>
+      <div class="marquee" data-direction="right"><div class="track"></div></div>
+    </section>
+
+    <section class="routes" id="routes">
+      <h2>OUR STRAVA ROUTES</h2>
+      <p>Real tracks, ridden on our ATVs. Swipe through and open any route on Strava.</p>
+      <div class="route-list">
+        <article class="route-card">
+          <img src="assets/images/route-1.png" alt="Strava map of Glogovet Trail" width="1088" height="436" loading="lazy">
+          <h3>GLOGOVET TRAIL</h3>
+          <p>Guided route · Blaj / Glogovet · Beginners welcome</p>
+          <a href="https://strava.app.link/ZIWsOKjXm7b" target="_blank" rel="noopener">Open on Strava</a>
+        </article>
+        <article class="route-card">
+          <img src="assets/images/route-2.png" alt="Strava map of Afternoon Ride" width="1088" height="436" loading="lazy">
+          <h3>AFTERNOON RIDE</h3>
+          <p>Ride · Blaj / Glogovet · September 27, 2026</p>
+          <a href="https://www.strava.com/activities/20650292373" target="_blank" rel="noopener">Open on Strava</a>
+        </article>
+        <article class="route-card">
+          <img src="assets/images/route-3.png" alt="Strava map of Lunch Ride" width="1088" height="436" loading="lazy">
+          <h3>LUNCH RIDE</h3>
+          <p>Ride · Blaj / Glogovet · September 27, 2026</p>
+          <a href="https://www.strava.com/activities/20347113534" target="_blank" rel="noopener">Open on Strava</a>
+        </article>
+        <article class="route-card">
+          <img src="assets/images/route-4.png" alt="Strava map of the Spătac ride" width="1088" height="436" loading="lazy">
+          <h3>SPĂTAC RIDE</h3>
+          <p>Ride · Blaj / Glogovet · Spătac</p>
+          <a href="https://www.strava.com/athletes/375477486" target="_blank" rel="noopener">Open on Strava</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>ABOUT US</h2>
+      <p>We are a small local crew that loves the trail. Pick up your machine, get a short briefing, and ride routes we know by heart.</p>
+      <h3>WHAT WE OFFER</h3>
+      <ul class="offer">
+        <li>Guided ATV tours, 5 seats per tour</li>
+        <li>Helmet and basic gear included</li>
+        <li>Safety briefing before every ride</li>
+        <li>Beginners welcome, Strava-mapped routes</li>
+      </ul>
+    </section>
+
+    <section class="rules">
+      <h2>THE RULES</h2>
+      <ol>
+        <li><b>01</b> Helmet on at all times, no exceptions</li>
+        <li><b>02</b> Minimum age [AGE] and a valid ID [LICENSE RULE]</li>
+        <li><b>03</b> Stay on the marked trails</li>
+        <li><b>04</b> No riding under the influence of alcohol or drugs</li>
+        <li><b>05</b> Return the ATV on time and in the same condition</li>
+        <li><b>06</b> Damage deposit of [DEPOSIT] required</li>
+      </ol>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2>LET'S RIDE.</h2>
+      <p>Message or call to book your ATV.</p>
+      <a class="contact-row" href="https://www.instagram.com/glogovet.trails/" target="_blank" rel="noopener"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</span><span>@glogovet.trails</span></a>
+      <a class="contact-row" href="tel:+40770874030"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Phone 1</span><span>0770 874 030</span></a>
+      <a class="contact-row" href="tel:+40763495058"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Phone 2</span><span>0763 495 058</span></a>
+      <a class="contact-row" href="mailto:glogovet.trails@gmail.com" data-email><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</span><span>glogovet.trails@gmail.com</span></a>
+    </section>
+  </main>
+
+  <dialog id="book-dialog">
+    <h3>BOOK YOUR RIDE</h3>
+    <a class="btn btn-dark" href="https://ig.me/m/glogovet.trails" target="_blank" rel="noopener">Message on Instagram</a>
+    <button class="btn btn-outline" type="button" id="call-toggle" aria-expanded="false">Call</button>
+    <div id="call-options"><div class="call-inner">
+      <a class="btn btn-dark" href="tel:+40770874030">0770 874 030</a>
+      <a class="btn btn-dark" href="tel:+40763495058">0763 495 058</a>
+    </div></div>
+    <a class="btn btn-outline" href="mailto:glogovet.trails@gmail.com?subject=ATV%20booking" data-email>Send an email</a>
+    <button class="close" type="button" id="book-close">Close</button>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
