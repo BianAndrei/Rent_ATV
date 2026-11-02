@@ -7,7 +7,9 @@
   --radius: 14px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; background: var(--paper); overscroll-behavior-y: none; }
+/* On phones the page fills the width, so paint the canvas dark: any Safari bounce past the footer stays footer-colored */
+@media (max-width: 560px) { html { background: var(--ink); } }
 body {
   font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
   background: var(--paper);
@@ -30,10 +32,11 @@ section p { color: var(--muted); }
   padding: 18px 20px 34px; color: #fff; background: linear-gradient(to bottom, rgba(0,0,0,.7) 0%, rgba(0,0,0,.35) 55%, rgba(0,0,0,0) 100%); pointer-events: none; font-weight: 800; font-size: 14px; letter-spacing: .08em;
 }
 .topbar a { color: inherit; text-decoration: none; }
-.book-link { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+/* Underline drawn outside the box so the word itself centers on the logo */
+.topbar .book-link { font-size: 12px; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 
 .hero {
-  background: url("../assets/images/hero-bg.jpg") center top / cover no-repeat;
+  background: url("../assets/images/hero-bg.webp") center top / cover no-repeat;
   color: #fff; min-height: 420px; overflow: hidden;
   display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 36px;
   position: relative;
@@ -102,7 +105,56 @@ section p { color: var(--muted); }
 .rules li { display: flex; gap: 16px; margin-bottom: 18px; }
 .rules b { color: var(--accent); }
 
-.contact { background: var(--paper-2); }
+.pricing { background: var(--paper-2); }
+.pricing > p { margin-bottom: 24px; }
+.receipt-wrap { filter: drop-shadow(0 12px 14px rgba(26,24,22,.16)); }
+/* Bottom edge torn into zig-zags: each 2*--zz wide tile keeps only the wedge above its bottom-center point */
+.receipt {
+  --zz: 10px;
+  --cut: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / calc(2 * var(--zz)) 100%;
+  background: #fff; padding: 26px 20px calc(22px + var(--zz)); border-radius: var(--radius) var(--radius) 0 0;
+  font-family: "Space Mono", "Courier New", monospace; font-size: 14px; line-height: 1.4;
+  -webkit-mask: var(--cut); mask: var(--cut);
+}
+.rc-head { display: grid; gap: 2px; text-align: center; font-size: 11px; letter-spacing: .08em; color: var(--muted); }
+.rc-head strong { font-family: "Poppins", "Helvetica Neue", Arial, sans-serif; font-size: 26px; letter-spacing: -.01em; color: var(--ink); margin-bottom: 4px; }
+.rc-picks, .rc-lines { border-top: 2px dashed #cfc9bd; margin-top: 18px; padding-top: 18px; }
+.rc-picks fieldset { border: 0; min-width: 0; }
+.rc-picks legend { font-size: 11px; letter-spacing: .08em; color: var(--muted); margin-bottom: 8px; }
+.seg { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.seg label { position: relative; cursor: pointer; }
+.seg input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.seg span { display: block; text-align: center; padding: 7px 0; border: 2px solid var(--ink); border-radius: 999px; font-weight: 700; transition: background .2s, color .2s; }
+.seg input:checked + span { background: var(--ink); color: #fff; }
+.seg input:focus-visible + span, .stepper button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rc-row { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-weight: 700; }
+.stepper { display: flex; align-items: center; gap: 10px; }
+.stepper button { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--ink); background: none; color: var(--ink); font: inherit; font-size: 18px; line-height: 1; cursor: pointer; }
+.stepper button:disabled { opacity: .25; cursor: default; }
+.stepper output { min-width: 2ch; text-align: center; font-size: 18px; }
+.rc-note { font-size: 12px; margin-top: 10px; }
+.rc-lines { list-style: none; display: grid; gap: 8px; }
+.rc-lines li { display: flex; align-items: baseline; gap: 6px; }
+.rc-lines li[hidden] { display: none; }
+.rc-lines i { flex: 1; border-bottom: 2px dotted #cfc9bd; }
+.rc-lines span:last-child { white-space: nowrap; }
+.rc-lines .incl { color: var(--muted); }
+.rc-total { display: flex; justify-content: space-between; align-items: baseline; border-top: 4px double var(--ink); margin-top: 18px; padding-top: 12px; color: var(--ink); font-weight: 700; font-size: 16px; }
+.rc-total output { display: inline-flex; align-items: flex-start; font-size: 28px; line-height: 1.15; white-space: pre; }
+/* Odometer: each digit is a 0-9 strip that rolls to its value, one column after another */
+.roll { display: inline-block; height: 1.15em; overflow: hidden; }
+.roll > span { display: flex; flex-direction: column; transition: transform .9s cubic-bezier(.2,.8,.2,1); }
+.roll > span > span { height: 1.15em; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.receipt .btn { margin: 20px 0 0; font-family: "Archivo", "Helvetica Neue", Arial, sans-serif; }
+.rc-foot { text-align: center; font-size: 11px; letter-spacing: .04em; margin-top: 18px; text-wrap: balance; }
+.barcode {
+  height: 44px; width: 72%; margin: 10px auto 0;
+  background: repeating-linear-gradient(90deg, var(--ink) 0 2px, #0000 2px 4px, var(--ink) 4px 5px, #0000 5px 8px, var(--ink) 8px 11px, #0000 11px 12px, var(--ink) 12px 13px, #0000 13px 16px);
+}
+@media (prefers-reduced-motion: reduce) { .roll > span { transition: none; } }
+
+.contact { background: var(--paper-2); padding-bottom: 76px; }
 .contact p { margin-bottom: 20px; }
 .contact-row {
   display: flex; justify-content: space-between; gap: 12px; padding: 16px 18px; margin-bottom: 12px;
@@ -117,10 +169,7 @@ dialog::backdrop { background: rgba(0,0,0,.6); }
 dialog h3 { font-size: 22px; margin-bottom: 18px; }
 dialog .close { background: none; border: 0; font: inherit; color: var(--muted); width: 100%; padding: 8px; cursor: pointer; }
 
-.brand span {
-  font-family: "Poppins", "Montserrat", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 700; font-size: 22px; letter-spacing: -.01em; text-transform: none; color: #fff;
-}
+.brand img { display: block; height: 40px; width: auto; filter: drop-shadow(0 2px 6px rgba(0,0,0,.45)); }
 
 .lbl { display: inline-flex; align-items: center; gap: 10px; }
 .ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -143,3 +192,25 @@ dialog.closing::backdrop { animation: fade-out .45s ease-in both; }
 @media (prefers-reduced-motion: reduce) { dialog[open], dialog.closing, #call-options, .call-inner .btn { animation: none; transition: none; } }
 
 .topbar a { pointer-events: auto; }
+
+/* Footer band overlaps the contact section so its rounded corners show paper-2 behind them */
+.site-foot {
+  position: relative; margin-top: -28px; border-radius: 28px 28px 0 0; padding: 30px 20px calc(34px + env(safe-area-inset-bottom));
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 22px;
+  color: #fff; background: radial-gradient(circle at 88% 0%, rgba(217,72,43,.32), rgba(217,72,43,0) 55%), var(--ink);
+}
+.foot-brand { display: grid; justify-items: center; color: inherit; text-decoration: none; }
+.foot-brand strong { font-family: "Poppins", "Helvetica Neue", Arial, sans-serif; font-size: 26px; line-height: 1.1; letter-spacing: -.01em; }
+.foot-brand span { font-size: 9px; font-weight: 800; letter-spacing: .16em; opacity: .8; }
+.foot-icons { display: flex; gap: 8px; }
+.foot-icons a {
+  display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,.35); color: #fff; transition: background .2s, border-color .2s;
+}
+.foot-icons a:hover, .foot-icons a:focus-visible { background: rgba(255,255,255,.1); border-color: #fff; }
+.foot-icons .ico { width: 19px; height: 19px; }
+.foot-credit {
+  flex-basis: 100%; margin: 4px 0 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.14);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; font-size: 10.5px; color: rgba(255,255,255,.6);
+}
+.foot-credit a { color: inherit; font-weight: 700; text-decoration: none; }

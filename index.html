@@ -1,120 +1,188 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Glogovet Trails · ATV Rentals</title>
-  <meta name="description" content="Rent an ATV by the hour or by the day. Safety briefing included, Strava-mapped routes.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1816">
+  <title>Glogovet Trails · Închirieri ATV</title>
+  <meta name="description" content="Închiriază un ATV la oră sau pe zi. Instructaj de siguranță inclus, trasee cartografiate pe Strava.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/hero-bg.webp">
+  <link rel="stylesheet" href="css/styles.css?v=3">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
   </svg>
   <header class="topbar">
-    <a class="brand" href="#top" data-text="Glogovet Trails"><span>GTrails</span></a>
+    <a class="brand" href="#top"><img src="assets/images/logo.webp" alt="GTrails · Glogovet Trails" width="160" height="157"></a>
     <a class="book-link" href="#contact">CONTACT</a>
   </header>
 
   <main id="top">
     <section class="hero">
-      <p class="eyebrow">ATV Rentals · Off-road trails</p>
-      <h1>RIDE THE<br><span class="accent">ROUGH.</span></h1>
+      <p class="eyebrow">Închirieri ATV · Trasee off-road</p>
+      <h1>ÎNFRUNTĂ<br><span class="accent">TERENUL.</span></h1>
     </section>
 
     <section class="intro">
-      <h2>PICK A MACHINE.<br>PICK A TRAIL.<br>GO.</h2>
-      <p>Guided ATV tours in Blaj / Glogovet. 5 seats per tour, beginners welcome. Get a quick safety briefing and hit routes we have already ridden ourselves.</p>
-      <a class="btn btn-dark" href="#routes">See the routes</a>
-      <button class="btn btn-outline" type="button" id="book-btn">Book your ride</button>
+      <h2>ALEGE UN ATV.<br>ALEGE UN TRASEU.<br>PORNEȘTE.</h2>
+      <p>Ture ghidate cu ATV-ul în Blaj / Glogovet. 5 locuri pe tură, începătorii sunt bineveniți. Primești un instructaj rapid de siguranță și pornești pe trasee pe care le-am parcurs deja noi.</p>
+      <a class="btn btn-dark" href="#routes">Vezi traseele</a>
+      <button class="btn btn-outline" type="button" id="book-btn">Rezervă o tură</button>
     </section>
 
     <section class="gallery" id="gallery">
-      <h2>OUT ON THE TRAIL</h2>
+      <h2>PE TRASEU</h2>
       <div class="marquee" data-direction="left"><div class="track"></div></div>
       <div class="marquee" data-direction="right"><div class="track"></div></div>
     </section>
 
     <section class="routes" id="routes">
-      <h2>OUR STRAVA ROUTES</h2>
-      <p>Real tracks, ridden on our ATVs. Swipe through and open any route on Strava.</p>
+      <h2>TRASEELE NOASTRE STRAVA</h2>
+      <p>Trasee reale, parcurse cu ATV-urile noastre. Glisează și deschide orice traseu pe Strava.</p>
       <div class="route-list">
         <article class="route-card">
-          <img src="assets/images/route-1.png" alt="Strava map of Glogovet Trail" width="1088" height="436" loading="lazy">
-          <h3>GLOGOVET TRAIL</h3>
-          <p>Guided route · Blaj / Glogovet · Beginners welcome</p>
-          <a href="https://strava.app.link/ZIWsOKjXm7b" target="_blank" rel="noopener">Open on Strava</a>
+          <img src="assets/images/route-1.png" alt="Harta Strava a traseului Glogovet" width="1088" height="436" loading="lazy">
+          <h3>TRASEUL GLOGOVET</h3>
+          <p>Traseu ghidat · Blaj / Glogovet · Începătorii sunt bineveniți</p>
+          <a href="https://strava.app.link/ZIWsOKjXm7b" target="_blank" rel="noopener">Deschide pe Strava</a>
         </article>
         <article class="route-card">
-          <img src="assets/images/route-2.png" alt="Strava map of Afternoon Ride" width="1088" height="436" loading="lazy">
-          <h3>AFTERNOON RIDE</h3>
-          <p>Ride · Blaj / Glogovet · September 27, 2026</p>
-          <a href="https://www.strava.com/activities/20650292373" target="_blank" rel="noopener">Open on Strava</a>
+          <img src="assets/images/route-2.png" alt="Harta Strava a turei de după-amiază" width="1088" height="436" loading="lazy">
+          <h3>TURA DE DUPĂ-AMIAZĂ</h3>
+          <p>Tură · Blaj / Glogovet · 27 septembrie 2026</p>
+          <a href="https://www.strava.com/activities/20650292373" target="_blank" rel="noopener">Deschide pe Strava</a>
         </article>
         <article class="route-card">
-          <img src="assets/images/route-3.png" alt="Strava map of Lunch Ride" width="1088" height="436" loading="lazy">
-          <h3>LUNCH RIDE</h3>
-          <p>Ride · Blaj / Glogovet · September 27, 2026</p>
-          <a href="https://www.strava.com/activities/20347113534" target="_blank" rel="noopener">Open on Strava</a>
+          <img src="assets/images/route-3.png" alt="Harta Strava a turei de prânz" width="1088" height="436" loading="lazy">
+          <h3>TURA DE PRÂNZ</h3>
+          <p>Tură · Blaj / Glogovet · 27 septembrie 2026</p>
+          <a href="https://www.strava.com/activities/20347113534" target="_blank" rel="noopener">Deschide pe Strava</a>
         </article>
         <article class="route-card">
-          <img src="assets/images/route-4.png" alt="Strava map of the Spătac ride" width="1088" height="436" loading="lazy">
-          <h3>SPĂTAC RIDE</h3>
-          <p>Ride · Blaj / Glogovet · Spătac</p>
-          <a href="https://www.strava.com/athletes/375477486" target="_blank" rel="noopener">Open on Strava</a>
+          <img src="assets/images/route-4.png" alt="Harta Strava a turei Spătac" width="1088" height="436" loading="lazy">
+          <h3>TURA SPĂTAC</h3>
+          <p>Tură · Blaj / Glogovet · Spătac</p>
+          <a href="https://www.strava.com/athletes/375477486" target="_blank" rel="noopener">Deschide pe Strava</a>
         </article>
       </div>
     </section>
 
     <section class="about">
-      <h2>ABOUT US</h2>
-      <p>We are a small local crew that loves the trail. Pick up your machine, get a short briefing, and ride routes we know by heart.</p>
-      <h3>WHAT WE OFFER</h3>
+      <h2>DESPRE NOI</h2>
+      <p>Suntem o echipă mică, locală, care iubește traseele. Îți iei ATV-ul, asculți un scurt instructaj și pornești pe trasee pe care le știm pe de rost.</p>
+      <h3>CE OFERIM</h3>
       <ul class="offer">
-        <li>Guided ATV tours, 5 seats per tour</li>
-        <li>Helmet and basic gear included</li>
-        <li>Safety briefing before every ride</li>
-        <li>Beginners welcome, Strava-mapped routes</li>
+        <li>Ture ghidate cu ATV-ul, 5 locuri pe tură</li>
+        <li>Cască și echipament de bază incluse</li>
+        <li>Instructaj de siguranță înainte de fiecare tură</li>
+        <li>Începătorii sunt bineveniți, trasee cartografiate pe Strava</li>
       </ul>
     </section>
 
+    <section class="pricing" id="pricing">
+      <h2>CÂT COSTĂ</h2>
+      <p>Alege durata turei și câte persoane sunteți. Bonul se calculează singur.</p>
+      <div class="receipt-wrap">
+        <!-- Prices: data-atv is per ATV, data-passenger is per extra person riding on the back, for that ride time -->
+        <form class="receipt" id="receipt" data-currency="lei" data-max-atvs="5">
+          <div class="rc-head">
+            <strong>GTrails</strong>
+            <span>TURE ATV · BLAJ / GLOGOVET</span>
+            <span>ESTIMARE PREȚ · <time id="rc-date"></time></span>
+          </div>
+          <div class="rc-picks">
+            <fieldset>
+              <legend>DURATA TUREI</legend>
+              <div class="seg">
+                <label><input type="radio" name="time" value="1h" data-atv="250" data-passenger="50" checked><span>1H</span></label>
+                <label><input type="radio" name="time" value="2h" data-atv="450" data-passenger="90"><span>2H</span></label>
+                <label><input type="radio" name="time" value="3h" data-atv="600" data-passenger="120"><span>3H</span></label>
+                <label><input type="radio" name="time" value="day" data-atv="900" data-passenger="180"><span>ZI</span></label>
+              </div>
+            </fieldset>
+            <div class="rc-row">
+              <span id="rc-riders-lbl">Persoane</span>
+              <div class="stepper" data-field="riders">
+                <button type="button" data-step="-1" aria-label="Scoate o persoană">−</button>
+                <output aria-labelledby="rc-riders-lbl">1</output>
+                <button type="button" data-step="1" aria-label="Adaugă o persoană">+</button>
+              </div>
+            </div>
+            <div class="rc-row">
+              <span id="rc-atvs-lbl">ATV-uri</span>
+              <div class="stepper" data-field="atvs">
+                <button type="button" data-step="-1" aria-label="Scoate un ATV">−</button>
+                <output aria-labelledby="rc-atvs-lbl">1</output>
+                <button type="button" data-step="1" aria-label="Adaugă un ATV">+</button>
+              </div>
+            </div>
+            <p class="rc-note" id="rc-note">Tură solo, 1 persoană pe 1 ATV</p>
+          </div>
+          <ul class="rc-lines">
+            <li id="rc-atv-line"><span>ATV × 1 · 1H</span><i></i><span>250 lei</span></li>
+            <li id="rc-pass-line" hidden><span>Pasager × 0</span><i></i><span>0 lei</span></li>
+            <li class="incl"><span>Cască și echipament</span><i></i><span>Inclus</span></li>
+            <li class="incl"><span>Instructaj siguranță</span><i></i><span>Inclus</span></li>
+            <li class="incl"><span>Ghid de traseu</span><i></i><span>Inclus</span></li>
+          </ul>
+          <p class="rc-total"><span>TOTAL</span><output id="rc-total">250 lei</output></p>
+          <a class="btn btn-dark" href="#contact" id="rc-book">Rezervă tura</a>
+          <p class="rc-foot">MULȚUMIM · NE VEDEM PE TRASEU</p>
+          <div class="barcode" aria-hidden="true"></div>
+        </form>
+      </div>
+    </section>
+
     <section class="rules">
-      <h2>THE RULES</h2>
+      <h2>REGULILE</h2>
       <ol>
-        <li><b>01</b> Helmet on at all times, no exceptions</li>
-        <li><b>02</b> Minimum age [AGE] and a valid ID [LICENSE RULE]</li>
-        <li><b>03</b> Stay on the marked trails</li>
-        <li><b>04</b> No riding under the influence of alcohol or drugs</li>
-        <li><b>05</b> Return the ATV on time and in the same condition</li>
-        <li><b>06</b> Damage deposit of [DEPOSIT] required</li>
+        <li><b>01</b> Casca pe cap tot timpul, fără excepții</li>
+        <li><b>02</b> Vârsta minimă 18 ani și un act de identitate valabil</li>
+        <li><b>03</b> Rămâi pe traseele marcate</li>
+        <li><b>04</b> Fără condus sub influența alcoolului sau a drogurilor</li>
+        <li><b>05</b> Returnează ATV-ul la timp și în aceeași stare</li>
+        <li><b>06</b> Garanție pentru daune de 500 lei</li>
       </ol>
     </section>
 
     <section class="contact" id="contact">
-      <h2>LET'S RIDE.</h2>
-      <p>Message or call to book your ATV.</p>
+      <h2>HAI LA DRUM.</h2>
+      <p>Scrie-ne sau sună-ne ca să rezervi un ATV.</p>
       <a class="contact-row" href="https://www.instagram.com/glogovet.trails/" target="_blank" rel="noopener"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</span><span>@glogovet.trails</span></a>
-      <a class="contact-row" href="tel:+40770874030"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Phone 1</span><span>0770 874 030</span></a>
-      <a class="contact-row" href="tel:+40763495058"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Phone 2</span><span>0763 495 058</span></a>
+      <a class="contact-row" href="https://www.facebook.com/share/1Bxonaodzr/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-3.5H14V7.5c0-1 .4-1.7 1.8-1.7H18V2.6c-.4 0-1.6-.2-3-.2-3 0-4.6 1.8-4.6 4.9v2.2H7.5V13h2.9v8"/></svg>Facebook</span><span>Glogovet Trails</span></a>
+      <a class="contact-row" href="tel:+40770874030"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Telefon 1</span><span>0770 874 030</span></a>
+      <a class="contact-row" href="tel:+40763495058"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Telefon 2</span><span>0763 495 058</span></a>
       <a class="contact-row" href="mailto:glogovet.trails@gmail.com" data-email><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</span><span>glogovet.trails@gmail.com</span></a>
     </section>
   </main>
 
+  <footer class="site-foot">
+    <a class="foot-brand" href="#top"><strong>GTrails</strong><span>ÎNCHIRIERI ATV</span></a>
+    <nav class="foot-icons" aria-label="Contact">
+      <a href="https://www.instagram.com/glogovet.trails/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a href="tel:+40770874030" aria-label="Sună la 0770 874 030"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+      <a href="mailto:glogovet.trails@gmail.com?subject=Rezervare%20ATV" data-email aria-label="Email"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      <a href="https://www.facebook.com/share/1Bxonaodzr/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-3.5H14V7.5c0-1 .4-1.7 1.8-1.7H18V2.6c-.4 0-1.6-.2-3-.2-3 0-4.6 1.8-4.6 4.9v2.2H7.5V13h2.9v8"/></svg></a>
+    </nav>
+    <p class="foot-credit"><span>© 2026 Glogovet Trails. Toate drepturile rezervate.</span><span>Design &amp; dezvoltare: <a href="https://fabersync.com/" target="_blank" rel="noopener">FaberSync</a></span></p>
+  </footer>
+
   <dialog id="book-dialog">
-    <h3>BOOK YOUR RIDE</h3>
-    <a class="btn btn-dark" href="https://ig.me/m/glogovet.trails" target="_blank" rel="noopener">Message on Instagram</a>
-    <button class="btn btn-outline" type="button" id="call-toggle" aria-expanded="false">Call</button>
+    <h3>REZERVĂ O TURĂ</h3>
+    <a class="btn btn-dark" href="https://ig.me/m/glogovet.trails" target="_blank" rel="noopener">Scrie-ne pe Instagram</a>
+    <button class="btn btn-outline" type="button" id="call-toggle" aria-expanded="false">Sună</button>
     <div id="call-options"><div class="call-inner">
       <a class="btn btn-dark" href="tel:+40770874030">0770 874 030</a>
       <a class="btn btn-dark" href="tel:+40763495058">0763 495 058</a>
     </div></div>
-    <a class="btn btn-outline" href="mailto:glogovet.trails@gmail.com?subject=ATV%20booking" data-email>Send an email</a>
-    <button class="close" type="button" id="book-close">Close</button>
+    <a class="btn btn-outline" href="mailto:glogovet.trails@gmail.com?subject=Rezervare%20ATV" data-email>Trimite un email</a>
+    <button class="close" type="button" id="book-close">Închide</button>
   </dialog>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
