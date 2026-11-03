@@ -36,7 +36,7 @@ section p { color: var(--muted); }
 .topbar .book-link { font-size: 12px; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 6px; }
 
 .hero {
-  background: url("../assets/images/hero-bg.webp") center top / cover no-repeat;
+  background: url("../assets/images/hero-bg.webp?v=2") center top / cover no-repeat;
   color: #fff; min-height: 420px; overflow: hidden;
   display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 36px;
   position: relative;
