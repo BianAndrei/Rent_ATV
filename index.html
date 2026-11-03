@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/images/hero-bg.webp?v=4">
-  <link rel="stylesheet" href="css/styles.css?v=8">
+  <link rel="stylesheet" href="css/styles.css?v=11">
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -36,6 +36,12 @@
   </svg>
   <header class="topbar">
     <a class="brand" href="#top"><img src="assets/images/logo.webp" alt="GTrails · Glogovet Trails" width="160" height="157"></a>
+    <nav class="top-nav" aria-label="Secțiuni">
+      <a href="#gallery">GALERIE</a>
+      <a href="#routes">TRASEE</a>
+      <a href="#about">DESPRE</a>
+      <a href="#pricing">PREȚURI</a>
+    </nav>
     <a class="book-link" href="#contact">CONTACT</a>
   </header>
 
@@ -60,7 +66,7 @@
 
     <section class="routes" id="routes">
       <h2>TRASEELE NOASTRE STRAVA</h2>
-      <p>Trasee reale, parcurse cu ATV-urile noastre. Glisează și deschide orice traseu pe Strava.</p>
+      <p>Trasee reale, parcurse cu ATV-urile noastre. <span class="hint-touch">Glisează și deschide</span><span class="hint-wide">Deschide</span> orice traseu pe Strava.</p>
       <div class="route-list">
         <article class="route-card">
           <img src="assets/images/route-1.png" alt="Harta Strava a traseului Glogovet" width="1088" height="436" loading="lazy">
@@ -89,9 +95,10 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
       <h2>DESPRE NOI</h2>
       <p>Suntem aici pentru cei care își doresc mai mult decât o simplă plimbare. Oferim experiențe off-road cu ATV-uri CFMOTO, prin peisajele spectaculoase ale județului Alba, unde natura, adrenalina și libertatea se întâlnesc.</p>
+      <div class="offer-box">
       <h3>CE OFERIM</h3>
       <ul class="offer">
         <li>Ture ghidate cu ATV-ul, 5 locuri pe tură</li>
@@ -100,6 +107,7 @@
         <li>ATV-uri de ultimă generație</li>
         <li>Începătorii sunt bineveniți, instructaj de siguranță inclus.</li>
       </ul>
+      </div>
     </section>
 
     <section class="pricing" id="pricing">
@@ -171,11 +179,13 @@
     <section class="contact" id="contact">
       <h2>HAI LA DRUM.</h2>
       <p>Scrie-ne sau sună-ne ca să rezervi un ATV.</p>
+      <div class="contact-list">
       <a class="contact-row" href="https://www.instagram.com/glogovet.trails/" target="_blank" rel="noopener"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>Instagram</span><span>@glogovet.trails</span></a>
       <a class="contact-row" href="https://www.facebook.com/share/1Bxonaodzr/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 21v-8h3l.5-3.5H14V7.5c0-1 .4-1.7 1.8-1.7H18V2.6c-.4 0-1.6-.2-3-.2-3 0-4.6 1.8-4.6 4.9v2.2H7.5V13h2.9v8"/></svg>Facebook</span><span>Glogovet Trails</span></a>
       <a class="contact-row" href="tel:+40770874030"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Telefon 1</span><span>0770 874 030</span></a>
       <a class="contact-row" href="tel:+40763495058"><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Telefon 2</span><span>0763 495 058</span></a>
       <a class="contact-row" href="mailto:glogovet.trails@gmail.com" data-email><span class="lbl"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</span><span>glogovet.trails@gmail.com</span></a>
+      </div>
     </section>
   </main>
 
